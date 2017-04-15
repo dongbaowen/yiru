@@ -22,7 +22,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="yiru-fundamental" />
+        <module name="yiru-fundamental-json" />
+        <module name="yiru-fundamental-web" />
         <module name="yiru-user-api" />
         <module name="yiru-user-impl" />
         <module name="yiru-user-web" />
@@ -31,6 +32,8 @@
     <bytecodeTargetLevel>
       <module name="yiru" target="1.5" />
       <module name="yiru-fundamental" target="1.5" />
+      <module name="yiru-fundamental-json" target="1.5" />
+      <module name="yiru-fundamental-web" target="1.5" />
       <module name="yiru-user" target="1.5" />
       <module name="yiru-user-api" target="1.5" />
       <module name="yiru-user-impl" target="1.5" />
