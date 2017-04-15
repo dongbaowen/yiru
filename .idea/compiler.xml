@@ -22,11 +22,20 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="yiru" />
+        <module name="yiru-fundamental" />
+        <module name="yiru-user-api" />
+        <module name="yiru-user-impl" />
+        <module name="yiru-user-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="yiru" target="1.5" />
+      <module name="yiru-fundamental" target="1.5" />
+      <module name="yiru-user" target="1.5" />
+      <module name="yiru-user-api" target="1.5" />
+      <module name="yiru-user-impl" target="1.5" />
+      <module name="yiru-user-provider" target="1.5" />
+      <module name="yiru-user-web" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
