@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Baowen on 2017/4/15.
  */
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService{
 
     @Resource
@@ -19,4 +19,5 @@ public class UserServiceImpl implements UserService{
     public List<User> getUserList() {
         return userDao.getUserList();
     }
+
 }

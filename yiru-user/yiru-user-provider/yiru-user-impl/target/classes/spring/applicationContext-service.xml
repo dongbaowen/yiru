@@ -12,7 +12,5 @@
 		http://www.springframework.org/schema/task 
 		http://www.springframework.org/schema/task/spring-task.xsd">
 
-	<context:annotation-config/>
-	<import resource="applicationContext-dao.xml"/>
-	<import resource="applicationContext-service.xml"/>
+	<context:component-scan base-package="com.yiru.service" />
 </beans>
