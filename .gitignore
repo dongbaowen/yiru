@@ -1,0 +1,15 @@
+.DS_Store
+export/
+hermes/target/
+target/
+out/
+/target/
+/.settings/
+/.classpath
+/.project
+/.idea/
+/bin/
+*.iml
+/logs/
+.idea/
+.idea/*
