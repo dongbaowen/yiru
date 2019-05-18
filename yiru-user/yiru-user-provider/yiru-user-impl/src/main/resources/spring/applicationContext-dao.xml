@@ -50,10 +50,24 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
+    <!-- 事务管理器配置,单数据源事务 -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 事务拦截的类及方法 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="insert*" propagation="REQUIRES_NEW" rollback-for="java.lang.Exception"/>
+            <tx:method name="save*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="add*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="update*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="delete*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+        </tx:attributes>
+    </tx:advice>
     <aop:config proxy-target-class="true">
-        <aop:pointcut id="pt" expression="execution(* com.yiru.dao.*.*(..))"/>
-        <aop:aspect id="asp" ref="testAspect">
-            <aop:around method="around" pointcut-ref="pt"/>
-        </aop:aspect>
+        <aop:advisor pointcut="execution(* com.yiru.service.*.*(..))" advice-ref="txAdvice" order="0"/>
     </aop:config>
+
 </beans>
